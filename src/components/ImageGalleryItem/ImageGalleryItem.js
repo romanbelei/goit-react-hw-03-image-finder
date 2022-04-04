@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import styles from './ImageGalleryItem.module.css';
+import s from './ImageGalleryItem.module.css';
 
 export default class ImageGalleryItem extends Component {
   state = {
@@ -26,8 +26,12 @@ export default class ImageGalleryItem extends Component {
         {this.state.pictures &&
           this.state.pictures.hits.map(p => {
             return (
-              <li className="gallery-item" key={p.id}>
-                <img src={p.webformatURL} alt={p.tags} />
+              <li className={s.ImageGalleryItem} key={p.id}>
+                <img
+                  className={s['ImageGalleryItem-image']}
+                  src={p.webformatURL}
+                  alt={p.tags}
+                />
               </li>
             );
           })}
